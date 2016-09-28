@@ -1,0 +1,19 @@
+workflow:
+    - second
+shared:
+    image: node:6
+jobs:
+    main:
+        steps:
+            - print: echo Starting main job!
+            - check: ./check-secrets.sh
+        secrets:
+            - FOO
+    
+    # Stuff
+    second:
+        steps:
+            - print: echo Starting second job!
+            - check: ./check-secrets.sh
+        secrets:
+            - FOO
