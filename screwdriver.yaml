@@ -4,6 +4,3 @@ jobs:
     main:
         steps:
             - print: echo Starting main job!
-            - check: ./check-secrets.sh
-        secrets:
-            - FOO
