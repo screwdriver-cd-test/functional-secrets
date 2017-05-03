@@ -5,5 +5,5 @@ if [ -z "$FOO" ]; then
   exit 1
 fi
 
-echo Get FOO secret
+echo Get FOO="$FOO" secret
 exit 0
