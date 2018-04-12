@@ -1,5 +1,3 @@
-workflow:
-    - second
 shared:
     image: node:6
 jobs:
@@ -9,9 +7,14 @@ jobs:
             - check: ./check-secrets.sh
         secrets:
             - FOO
+        requires:
+            - ~pr
+            - ~commit
     second:
         steps:
             - print: echo Starting second job!
             - check: ./check-secrets.sh
         secrets:
             - FOO
+        requires:
+            - main
